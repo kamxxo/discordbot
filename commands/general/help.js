@@ -7,6 +7,7 @@ module.exports = {
     execute(client, connection, config, message, args) {
         var isStaff = false;
         if (message.member.roles.find(role => role.name == config.staffRole)) isStaff = true;
+        message.delete();
         const data = [];
         const { commands } = message.client;
 
